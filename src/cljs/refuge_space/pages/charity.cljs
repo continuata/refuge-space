@@ -1,6 +1,6 @@
-(ns refuge-space.pages.admin
+(ns refuge-space.pages.charity
     (:require [reagent.core :as reagent]))
 
-(defn admin-page []
-  [:div [:h2 "admin page"]
+(defn charity-page []
+  [:div [:h2 "charity page"]
    [:div [:a {:href "#/about"} "go to about page"]]])

@@ -4,7 +4,7 @@
               [refuge-space.components.navbar :refer [navbar]]))
 
 (defn current-page []
-  [:div.container
-    [:nav
-      [navbar (session/get :nav-state)]]
-    [(session/get :current-page)]])
+  [:div
+    [navbar (session/get :nav-state)]
+    [:div.container.theme-showcase {:role "main"}
+      [(session/get :current-page)]]])

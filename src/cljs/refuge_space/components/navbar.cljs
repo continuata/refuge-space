@@ -6,8 +6,7 @@
   (if (= state val) "active" ""))
 
 (defn navbar [nav-state]
-  [:nav {:class "navbar navbar-default"}
-    [:div {:class "container"}
+  [:nav {:class "navbar navbar-inverse navbar-fixed-top"}
     [:div {:class "navbar-header"}
       [:button {:type "button", :class "navbar-toggle collapsed", :data-toggle "collapse", :data-target ".navbar-collapse"}
         [:span {:class "sr-only"} "Toggle navigation"]
@@ -18,7 +17,8 @@
     [:div {:class "navbar-collapse collapse"}
       [:ul {:class "nav navbar-nav"}
         [:li {:class (active? nav-state "home")} [:a {:href "#/"} "Home"]]
-        [:li {:class (active? nav-state "admin")} [:a {:href "#/admin"} "Admin"]]
+        [:li {:class (active? nav-state "giver")} [:a {:href "#/giver"} "Giver"]]
+        [:li {:class (active? nav-state "charity")} [:a {:href "#/charity"} "Charity"]]
         [:li {:class (active? nav-state "about")} [:a {:href "#/about"} "About"]]
         [:li {:class "dropdown"}
           [:a {:href "#",
@@ -35,4 +35,4 @@
             [:li {:role "separator", :class "divider"}]
             [:li {:class "dropdown-header"} "Nav header"]
             [:li [:a {:href "#"} "Separated link"]]
-            [:li [:a {:href "#"} "One more separated link"]]]]]]]])
+            [:li [:a {:href "#"} "One more separated link"]]]]]]])
