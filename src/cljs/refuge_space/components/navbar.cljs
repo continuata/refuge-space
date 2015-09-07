@@ -1,7 +1,11 @@
 (ns refuge-space.components.navbar
-    (:require [reagent.core :as reagent]))
+    (:require [reagent.core :as reagent]
+              [reagent.session :as session]))
 
-(defn navbar []
+(defn active? [state val]
+  (if (= state val) "active" ""))
+
+(defn navbar [nav-state]
   [:nav {:class "navbar navbar-default"}
     [:div {:class "container"}
     [:div {:class "navbar-header"}
@@ -13,10 +17,9 @@
           [:a {:class "navbar-brand", :href "#"} "stayhere.org.uk"]]
     [:div {:class "navbar-collapse collapse"}
       [:ul {:class "nav navbar-nav"}
-        [:li {:class "active"} [:a {:href "#/"} "Home"]]
-        [:li [:a {:href "#/admin"} "Admin"]]
-
-        [:li [:a {:href "#/about"} "About"]]
+        [:li {:class (active? nav-state "home")} [:a {:href "#/"} "Home"]]
+        [:li {:class (active? nav-state "admin")} [:a {:href "#/admin"} "Admin"]]
+        [:li {:class (active? nav-state "about")} [:a {:href "#/about"} "About"]]
         [:li {:class "dropdown"}
           [:a {:href "#",
                :class "dropdown-toggle",

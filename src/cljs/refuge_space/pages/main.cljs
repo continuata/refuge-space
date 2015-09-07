@@ -6,5 +6,5 @@
 (defn current-page []
   [:div.container
     [:nav
-      [navbar]]
+      [navbar (session/get :nav-state)]]
     [(session/get :current-page)]])
