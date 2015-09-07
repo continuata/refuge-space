@@ -37,5 +37,5 @@
   (with-mounted-component (navbar "home")
     (fn [c div]
       (is (found-in #"Home" div))
-      (is (found-in #"Admin" div))
-      (is (found-in #"About" div)))))
+      (is (found-in #"Giver" div))
+      (is (found-in #"Charity" div)))))
