@@ -1,2 +1,4 @@
-lein: lein2
-script: lein2 cljsbuild test
+## Customize test commands
+test:
+  override:
+    - lein cljsbuild test # use phantomjs for testing
