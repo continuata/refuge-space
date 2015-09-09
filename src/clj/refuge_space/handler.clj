@@ -17,6 +17,7 @@
              :content "width=device-width, initial-scale=1"}]
      (include-css "bower_components/bootstrap/dist/css/bootstrap.min.css")
      (include-css "bower_components/bootstrap/dist/css/bootstrap-theme.min.css")
+     (include-css (if (env :dev) "css/navbar.css" "css/navbar.min.css"))
      (include-css (if (env :dev) "css/site.css" "css/site.min.css"))]
     [:body
      [:div#app
@@ -24,7 +25,7 @@
       [:p "please run "
        [:b "lein figwheel"]
        " in order to start the compiler"]]
-     (include-js "bower_components/jquery/dist/jquery.min.js")              
+     (include-js "bower_components/jquery/dist/jquery.min.js")
      (include-js "bower_components/bootstrap/dist/js/bootstrap.min.js")
      (include-js "js/app.js")]]))
 

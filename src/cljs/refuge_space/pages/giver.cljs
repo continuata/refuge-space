@@ -3,30 +3,56 @@
               [reagent.session :as session]
               [refuge_space.local-storage :as ls]
               [matchbox.core :as m]
+              [cognitect.transit :as t]
               [reagent-forms.core :refer [bind-fields]]))
 
 (def doc (atom {}))
 (def fb_root (m/connect "https://confide.firebaseio.com/"))
+(def r (t/reader :json))
 
-(defn twitter-callback [err auth]
-   (when err (js/console.log "Login Failed!" err))
-   (prn (aget auth "twitter" "displayName")))
+(defn auth-callback [err]
+   (when err (js/console.log "Login Failed!" err)))
 
 (defn twitter-login []
-  (.authWithOAuthPopup fb_root "twitter" twitter-callback))
+  (.authWithOAuthPopup fb_root "twitter" auth-callback))
 
-(defn get-name []
-  (let [auth (JSON/parse (ls/get-item "firebase:session::confide"))]
-    (if auth
-      (reset! doc :user.name (aget auth "twitter" "displayName")))))
+(defn facebook-login []
+  (.authWithOAuthPopup fb_root "facebook" auth-callback))
+
+(defn get-auth []
+  (t/read r (ls/get-item "firebase:session::confide")))
+
+(defn show-login []
+  [:div
+    [:button {:on-click twitter-login} "login with twitter"]
+    [:button {:on-click facebook-login} "login with facebook"]])
+
+(defn from-postcode []
+  ; https://api.getAddress.io/v2/uk
+  (prn (:user.postcode @doc)))
 
 (defn form-template []
-  (get-name)
-  [:div.jumbotron
-   [:h2 "Register your free space"]
-   [:input {:field :text :id :user.name :placeholder "full name" :autoFocus "true"}]
-   [:button {:on-click twitter-login} "login with twitter"]
-   [:div [:a {:href "#/about"} "go to about page"]]])
+  (let [auth (get-auth)
+        address (from-postcode)]
+    [:div.jumbotron
+      (if auth
+        [:form.form-horizontal
+          [:h2 "Register your free space"]
+          [:div.control-group
+            [:label.control-label {:for :user.name} "Name:"]
+            [:div.controls
+              [:input {:field :text
+                       :id :user.name
+                       :placeholder "full name" :autoFocus "true"}]]]
+          [:div.control-group
+            [:label.control-label {:for :user.email} "Email:"]
+            [:div.controls
+              [:input {:field :email :id :user.email :placeholder "email address"}]]]
+          [:div.control-group
+            [:label.control-label {:for :user.postcode} "Postcode:"]
+            [:div.controls
+              [:input {:field :text :id :user.email :placeholder "postcode"}]]]]
+      (show-login))]))
 
 
 (defn giver-page []

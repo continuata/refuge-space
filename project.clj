@@ -18,7 +18,8 @@
                  [environ "1.0.0"]
                  [org.clojure/clojurescript "1.7.122" :scope "provided"]
                  [secretary "1.2.3"]
-                 [matchbox "0.0.7-SNAPSHOT"]]
+                 [matchbox "0.0.7-SNAPSHOT"]
+                 [com.cognitect/transit-cljs "0.8.225"]]
 
   :plugins [[lein-environ "1.0.0"]
             [lein-asset-minifier "0.2.2"]]
@@ -37,6 +38,10 @@
                                     [:cljsbuild :builds :app :compiler :output-to]]
 
   :source-paths ["src/clj" "src/cljc"]
+
+  :sass {:src "resources/sass"
+         :output-directory "resources/public/css"
+         :source-maps true}
 
   :minify-assets
   {:assets
