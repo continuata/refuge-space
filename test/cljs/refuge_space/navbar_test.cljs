@@ -36,6 +36,6 @@
 (deftest test-navbar
   (with-mounted-component (navbar "home")
     (fn [c div]
-      (is (found-in #"Home" div))
-      (is (found-in #"Giver" div))
-      (is (found-in #"Charity" div)))))
+      (is (found-in #"sign up" div))
+      (is (found-in #"charity login" div))
+      (is (found-in #"how it works" div)))))
