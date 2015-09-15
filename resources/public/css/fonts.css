@@ -1,0 +1,41 @@
+@font-face {
+  font-family: Bebas;
+  src: url("fonts/BEBAS/BebasNeue Regular.otf") format("opentype");
+}
+@font-face {
+  font-family: Bebas;
+  font-weight: bold;
+  src: url("fonts/BEBAS/BebasNeue Bold.otf") format("opentype");
+}
+@font-face {
+  font-family: Bebas;
+  font-weight: lighter;
+  src: url("fonts/BEBAS/BebasNeue Light.otf") format("opentype");
+}
+@font-face {
+  font-family: Bebas Book;
+  src: url("fonts/BEBAS/BebasNeue Book.otf") format("opentype");
+}
+@font-face {
+  font-family: Bebas Thin;
+  src: url("fonts/BEBAS/BebasNeue Thin.otf") format("opentype");
+}
+
+@font-face {
+  font-family: League Gothic;
+  src: url("fonts/LEAGUE_GOTHIC/LeagueGothic-Regular.otf") format("opentype");
+}
+@font-face {
+  font-family: League Gothic;
+  font-style: italic;
+  src: url("fonts/LEAGUE_GOTHIC/LeagueGothic-Italic.otf") format("opentype");
+}
+@font-face {
+  font-family: League Gothic Condensed;
+  src: url("fonts/LEAGUE_GOTHIC/LeagueGothic-CondensedRegular.otf") format("opentype");
+}
+@font-face {
+  font-family: League Gothic Condensed;
+  font-style: italic;
+  src: url("fonts/LEAGUE_GOTHIC/LeagueGothic-CondensedItalic.otf") format("opentype");
+}

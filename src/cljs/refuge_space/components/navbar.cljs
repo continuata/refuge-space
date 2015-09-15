@@ -10,8 +10,11 @@
     [:div {:class "navbar-header"}
       [:button {:type "button", :class "navbar-toggle collapsed", :data-toggle "collapse", :data-target ".navbar-collapse"}
         [:span {:class "sr-only"} "Toggle navigation"]
+        [:span {:class "icon-bar"}]
+        [:span {:class "icon-bar"}]
         [:span {:class "icon-bar"}] ]
-          [:a {:class "navbar-brand", :href "#/"} "stayhere.org.uk"]]
+          [:a {:class "navbar-brand", :href "#/"}
+            [:span "STAY"][:span.blue "HERE"][:span ".ORG.UK"]]]
     [:div {:class "navbar-collapse collapse"}
       [:ul {:class "nav navbar-nav"}
         [:li {:class (active? nav-state "home")} [:a {:href "#/"} "sign up"]]

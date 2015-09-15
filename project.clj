@@ -19,6 +19,7 @@
                  [org.clojure/clojurescript "1.7.122" :scope "provided"]
                  [secretary "1.2.3"]
                  [matchbox "0.0.7-SNAPSHOT"]
+                 [cljsjs/bootstrap "3.3.5-0"]
                  [com.cognitect/transit-cljs "0.8.225"]]
 
   :plugins [[lein-environ "1.0.0"]

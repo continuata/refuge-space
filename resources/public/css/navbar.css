@@ -3,10 +3,16 @@
     background-image: none;
     background-color: #70767c;
     border-color: #E7E7E7;
+    color: white;
 }
 /* title */
 .navbar-default .navbar-brand {
-    color: #e6e7e9;
+    font-family: 'League Gothic';
+    color: white;
+    font-size: 32px;
+}
+.blue {
+  color: #303777;
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {

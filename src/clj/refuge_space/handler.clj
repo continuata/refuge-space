@@ -6,7 +6,8 @@
             [hiccup.page :refer [include-js include-css]]
             [prone.middleware :refer [wrap-exceptions]]
             [ring.middleware.reload :refer [wrap-reload]]
-            [environ.core :refer [env]]))
+            [environ.core :refer [env]]
+            [refuge-space.fb-server :as fb-server]))
 
 (def home-page
   (html
@@ -17,6 +18,8 @@
              :content "width=device-width, initial-scale=1"}]
      (include-css "bower_components/bootstrap/dist/css/bootstrap.min.css")
      (include-css "bower_components/bootstrap/dist/css/bootstrap-theme.min.css")
+     (include-css (if (env :dev) "css/fonts.css" "css/fonts.min.css"))
+     (include-css (if (env :dev) "css/signup.css" "css/signup.min.css"))
      (include-css (if (env :dev) "css/navbar.css" "css/navbar.min.css"))
      (include-css (if (env :dev) "css/site.css" "css/site.min.css"))]
     [:body
@@ -36,4 +39,5 @@
 
 (def app
   (let [handler (wrap-defaults #'routes site-defaults)]
+    (fb-server/run)
     (if (env :dev) (-> handler wrap-exceptions wrap-reload) handler)))
