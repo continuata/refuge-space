@@ -46,6 +46,8 @@ h4 {
   border-radius: 5px;
   margin-top: 20px;
   padding: 20px;
+  padding-top: 40px;
+  padding-bottom: 40px;  
 }
 .tagline > h1,
 .tagline > h2 {
@@ -64,7 +66,9 @@ h4 {
 
 .pane {
   margin-top: 60px;
-  padding: 40px;
+  padding: 20px;
+  padding-top: 40px;
+  padding-bottom: 40px;
   background-color: #70767c;
 }
 
