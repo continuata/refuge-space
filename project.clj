@@ -46,7 +46,10 @@
 
   :minify-assets
   {:assets
-    {"resources/public/css/site.min.css" "resources/public/css/site.css"}}
+    {"resources/public/css/site.min.css" "resources/public/css/site.css"
+    "resources/public/css/navbar.min.css" "resources/public/css/navbar.css"
+    "resources/public/css/fonts.min.css" "resources/public/css/fonts.css"
+    "resources/public/css/signup.min.css" "resources/public/css/signup.css"}}
 
   :cljsbuild {:builds {:app {:source-paths ["src/cljs" "src/cljc"]
                              :compiler {:output-to     "resources/public/js/app.js"
