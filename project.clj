@@ -1,4 +1,4 @@
-(defproject refuge_space "0.1.0-SNAPSHOT"
+(defproject stayhere "0.1.0-SNAPSHOT"
   :description "FIXME: write description"
   :url "http://example.com/FIXME"
   :license {:name "Eclipse Public License"
@@ -25,14 +25,14 @@
   :plugins [[lein-environ "1.0.0"]
             [lein-asset-minifier "0.2.2"]]
 
-  :ring {:handler refuge-space.handler/app
-         :uberwar-name "refuge_space.war"}
+  :ring {:handler stayhere.handler/app
+         :uberwar-name "stayhere.war"}
 
   :min-lein-version "2.5.0"
 
-  :uberjar-name "refuge_space.jar"
+  :uberjar-name "stayhere.jar"
 
-  :main refuge-space.server
+  :main stayhere.server
 
   :clean-targets ^{:protect false} [:target-path
                                     [:cljsbuild :builds :app :compiler :output-dir]
@@ -58,7 +58,7 @@
                                         :optimizations :none
                                         :pretty-print  true}}}}
 
-  :profiles {:dev {:repl-options {:init-ns refuge-space.repl}
+  :profiles {:dev {:repl-options {:init-ns stayhere.repl}
 
                    :dependencies [[ring/ring-mock "0.2.0"]
                                   [ring/ring-devel "1.4.0"]
@@ -78,12 +78,12 @@
                               :server-port 3449
                               :nrepl-port 7002
                               :css-dirs ["resources/public/css"]
-                              :ring-handler refuge-space.handler/app}
+                              :ring-handler stayhere.handler/app}
 
                    :env {:dev true}
 
                    :cljsbuild {:builds {:app {:source-paths ["env/dev/cljs"]
-                                             :compiler {:main "refuge-space.dev"
+                                             :compiler {:main "stayhere.dev"
                                                         :source-map true}}
                                         :test {:source-paths ["src/cljs" "src/cljc" "test/cljs"]
                                               :compiler {:output-to "target/test.js"

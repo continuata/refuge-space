@@ -1,4 +1,4 @@
-(ns refuge-space.components.navbar
+(ns stayhere.components.navbar
     (:require [reagent.core :as reagent]
               [reagent.session :as session]))
 

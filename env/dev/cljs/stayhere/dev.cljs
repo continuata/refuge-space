@@ -1,5 +1,5 @@
-(ns ^:figwheel-no-load refuge-space.dev
-  (:require [refuge-space.core :as core]
+(ns ^:figwheel-no-load stayhere.dev
+  (:require [stayhere.core :as core]
             [figwheel.client :as figwheel :include-macros true]))
 
 (enable-console-print!)

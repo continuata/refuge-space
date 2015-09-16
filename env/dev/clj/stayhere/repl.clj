@@ -1,5 +1,5 @@
-(ns refuge_space.repl
-  (:use refuge_space.handler
+(ns stayhere.repl
+  (:use stayhere.handler
         ring.server.standalone
         [ring.middleware file-info file]))
 

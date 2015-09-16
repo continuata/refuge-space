@@ -1,11 +1,11 @@
-(ns refuge-space.core
+(ns stayhere.core
     (:require [reagent.core :as reagent :refer [atom]]
               [reagent.session :as session]
               [secretary.core :as secretary :include-macros true]
               [goog.events :as events]
               [goog.history.EventType :as EventType]
-              [refuge-space.router]
-              [refuge-space.pages.main :refer [current-page]])
+              [stayhere.router]
+              [stayhere.pages.main :refer [current-page]])
     (:import goog.History))
 
 ;; -------------------------

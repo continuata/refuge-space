@@ -1,7 +1,7 @@
-(ns refuge-space.navbar-test
+(ns stayhere.navbar-test
   (:require [cemerick.cljs.test :refer-macros [is are deftest testing use-fixtures done]]
             [reagent.core :as reagent :refer [atom]]
-            [refuge-space.components.navbar :refer [navbar]]))
+            [stayhere.components.navbar :refer [navbar]]))
 
 
 (def isClient (not (nil? (try (.-document js/window)

@@ -1,10 +1,10 @@
-(ns refuge-space.router
+(ns stayhere.router
     (:require [reagent.session :as session]
               [secretary.core :as secretary :include-macros true]
-              [refuge-space.pages.home :refer [home-page]]
-              [refuge-space.pages.giver :refer [giver-page]]
-              [refuge-space.pages.charity :refer [charity-page]]
-              [refuge-space.pages.about :refer [about-page]])
+              [stayhere.pages.home :refer [home-page]]
+              [stayhere.pages.giver :refer [giver-page]]
+              [stayhere.pages.charity :refer [charity-page]]
+              [stayhere.pages.about :refer [about-page]])
     (:import goog.History))
 
 (secretary/set-config! :prefix "#")

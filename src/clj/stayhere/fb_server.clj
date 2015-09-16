@@ -1,4 +1,4 @@
-(ns refuge-space.fb-server
+(ns stayhere.fb-server
   (:require [matchbox.core :as m]))
 
 (def fb-key (System/getenv "firebase_confide_key"))

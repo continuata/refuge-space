@@ -1,4 +1,4 @@
-(ns refuge-space.components.carousel
+(ns stayhere.components.carousel
     (:require [reagent.core :as reagent]
               [reagent.session :as session]))
 

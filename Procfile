@@ -1,1 +1,1 @@
-web: java $JVM_OPTS -cp target/refuge_space.jar clojure.main -m refuge-space.server
+web: java $JVM_OPTS -cp target/stayhere.jar clojure.main -m stayhere.server

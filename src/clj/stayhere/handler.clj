@@ -1,4 +1,4 @@
-(ns refuge-space.handler
+(ns stayhere.handler
   (:require [compojure.core :refer [GET defroutes]]
             [compojure.route :refer [not-found resources]]
             [ring.middleware.defaults :refer [site-defaults wrap-defaults]]
@@ -7,7 +7,7 @@
             [prone.middleware :refer [wrap-exceptions]]
             [ring.middleware.reload :refer [wrap-reload]]
             [environ.core :refer [env]]
-            [refuge-space.fb-server :as fb-server]))
+            [stayhere.fb-server :as fb-server]))
 
 (def home-page
   (html

@@ -1,4 +1,4 @@
-# stayhere.org.uk [![Circle CI](https://circleci.com/gh/continuata/refuge-space.svg?style=svg)](https://circleci.com/gh/continuata/refuge-space)
+# stayhere.org.uk [![Circle CI](https://circleci.com/gh/continuata/stayhere.svg?style=svg)](https://circleci.com/gh/continuata/stayhere)
 Website to register interest in hosting refugees
 
 To run locally

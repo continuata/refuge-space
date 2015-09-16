@@ -1,5 +1,5 @@
-(ns refuge-space.server
-  (:require [refuge-space.handler :refer [app]]
+(ns stayhere.server
+  (:require [stayhere.handler :refer [app]]
             [environ.core :refer [env]]
             [ring.adapter.jetty :refer [run-jetty]])
   (:gen-class))
