@@ -1,13 +1,46 @@
 .signup-widget {
   background-color: #eee;
   width: 500px;
-  height: 700px;
+  height: 800px;
   padding: 50px;
+  padding-top: 30px;
+}
+
+.signup-title {
+  margin-left: 110px;
+  color: #333;
+  font-size: 50px;
 }
 
 .signup-pane {
   background-color: white;
-  margin-top: 80px;
+  margin-top: 10px;
   width: 400px;
-  height: 500px;
+  height: 550px;
+}
+
+.signup-arrow {
+  margin-left: 170px;
+  color: #70767c;
+  font-size: 40px;
+}
+
+.signup-indicators {
+  margin-left: 110px;
+  margin-top: 20px;
+}
+
+.signup-indicators li {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 6px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: #ccc;
+    border-radius: 20px;
+}
+
+.signup-indicators li.active {
+    background-color: #666;
 }
