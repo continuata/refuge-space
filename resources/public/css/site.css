@@ -40,14 +40,13 @@ h4 {
 }
 
 .tagline {
-  height: 350px;
   color: #333;
   background-color: #eee;
   border-radius: 5px;
-  margin-top: 20px;
+  margin: 20px;
   padding: 20px;
   padding-top: 40px;
-  padding-bottom: 40px;  
+  padding-bottom: 40px;
 }
 .tagline > h1,
 .tagline > h2 {
@@ -60,13 +59,14 @@ h4 {
 }
 
 .info-text {
+  padding-left: 40px;
+  padding-right: 40px;
   font-size: 20px;
   color: white;
 }
 
 .pane {
   margin-top: 60px;
-  padding: 20px;
   padding-top: 40px;
   padding-bottom: 40px;
   background-color: #70767c;
