@@ -5,6 +5,7 @@
 
 (defn current-page []
   [:div.container-fluid
+    [:div.background]  
     [navbar (session/get :nav-state)]
     [:div.container-fluid
       [(session/get :current-page)]]])
