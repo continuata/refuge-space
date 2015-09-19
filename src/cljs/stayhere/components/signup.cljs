@@ -1,7 +1,8 @@
 (ns stayhere.components.signup
   (:require [reagent.core :refer [atom]]
             [reagent.session :as session]
-            [matchbox.core :as m]))
+            [matchbox.core :as m]
+            [stayhere.components.validation :refer [is-valid?]]))
 
 (def fb_root (m/connect "https://confide.firebaseio.com/stayhere_queue/tasks"))
 
@@ -12,6 +13,11 @@
   (session/put! :signup-page page))
 
 (def volunteer (atom {}))
+(def validation (atom {}))
+
+(defn validate [id]
+  (swap! validation assoc id (is-valid? id (get @volunteer id)))
+  (prn @validation))
 
 (defn submit []
   (m/conj! fb_root @volunteer))
@@ -19,7 +25,8 @@
 (defn sync [evt]
   (let [id (-> evt .-target .-id)
         data (-> evt .-target .-value)]
-    (swap! volunteer assoc id data)))
+    (swap! volunteer assoc id data)
+    (validate id)))
 
 (defn input [type id label af]
   (let [val (get @volunteer id)]
